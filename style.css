@@ -1,0 +1,448 @@
+* {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+header > h2 {
+  font-size: 30px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.navbar a,
+.navbar ul li,
+.logo,
+.toggle-btn,
+.drop-menu,
+.drop-menu ul li {
+  z-index: 3;
+}
+
+.form-banner {
+  margin: 0 !important;
+  background-image: url("img/freepik3.png");
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  height: 100vh;
+  background-image: url("img/freepik1.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.chamada-banner {
+  padding: 150px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.chamada-banner h1 {
+  color: rgb(78, 128, 77);
+  font-weight: bold;
+  font-size: 45px;
+  position: relative;
+  z-index: 3;
+}
+
+.chamada-banner p {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-size: 22px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.navbar a {
+  text-decoration: none !important;
+  color: #fff;
+  font-size: 13px;
+}
+
+a:hover {
+  color: orange !important;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar .links {
+  margin-top: 20px;
+  display: flex;
+  gap: 2rem;
+}
+
+
+div.logo a {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .toggle-btn {
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.cmc-btn,
+.sb-btn {
+  display: inline-block;
+  margin: 30px !important;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none !important;
+  font-size: 15px;
+  background-color: rgb(78, 128, 77);
+  border-radius: 30px;
+}
+
+section.intersection {
+  background-color: rgb(78, 128, 77);
+  width:100%;
+  height:120px
+}
+
+div.symbol {
+  width: 125px;
+  height: 125px;
+  background-color: #ccc;
+  border-radius: 50%;
+  background-image: url("../img/userpic.jpg");
+  background-size: cover;
+  border: 1px solid #ccc;
+  background-position: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+}
+
+div.symbol .symbol-child {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+section.intersection h1 {
+  font-size: 25px;
+  color: white;
+}
+section.vantagens.contaiaaner.col-md-4{
+  max-height: 120px !important;
+}
+section.vantagens {
+  margin-top: 40px;
+  min-height: 100vh;
+  
+  position: relative;
+  display:flex;
+}
+
+.contaiaaner {
+  display: flex;
+  height: 100%;
+}
+
+.vantagem-single {
+  border-radius: 40px;
+  width: 90%;
+  margin: 20px auto;
+  min-height: 60vh;
+  background-color: lightgray;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.vantagem-single h1 {
+  font-size: 75px;
+  color: rgb(78, 128, 77);
+  text-shadow: 2px 2px 2px rgba(50, 50, 50, 0.5);
+}
+
+.vantagem-single h2 {
+  padding: 20px;
+  color: rgb(78, 128, 77);
+  font-weight: bold;
+}
+
+.vantagem-single p {
+  padding: 40px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.action_btn {
+  background-color: rgb(78, 128, 77);
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  transition: scale 0.2s ease;
+}
+
+.links li a {
+  font-size: 15px !important;
+}
+
+.background-vantagem {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("img/vantagem-back.jpg") top / cover no-repeat;
+  border-radius: 40px;
+}
+
+.background-vantagem:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgb(211, 211, 211, 1) 75%);
+  pointer-events: none;
+}
+
+.drop-menu {
+  display: none !important;
+  position: absolute;
+  top: 60px;
+  right: 1.5em;
+  width: 300px;
+  background-color: rgba(250, 250, 250, 0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drop-menu.open {
+  height: 240px;
+}
+
+.drop-menu ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.drop-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.drop-menu .action_btn {
+  width: 100% !important;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none !important;
+  }
+  .navbar .toggle-btn {
+    display: block;
+    color: white;
+  }
+  .drop-menu {
+    display: block !important;
+  }
+  .logo {
+    text-align: left;
+    flex-grow: 1;
+  }
+  .toggle-btn {
+    text-align: right;
+  }
+}
+
+@media (max-width: 576px) {
+  .drop-menu {
+    left: 2rem;
+    width: unset;
+  }
+}
+
+
+.action_btn:hover {
+  color: white !important;
+  transform: scale(1.05); /* Corrigido para usar transform */
+}
+
+section.frutas {
+  width: 100%;
+  padding: 30px 60px 0;
+}
+
+div.logo a {
+  display: inline-block; /* Corrigido o valor */
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+div.logo {
+  align-items: center;
+  display: flex;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  justify-content: space-between;
+}
+
+section.frutas h1 {
+  width: 100%;
+  margin: 0 0 40px 15px;
+  font-size: 35px;
+  color: black;
+}
+
+div.fruta-container h2 {
+  font-size: 40px;
+}
+
+h1 > p {
+  font-size: 20px;
+}
+
+.item {
+  margin-bottom: 20px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 0 20px 20px;
+  background-color: lightgray;
+}
+
+section.frutas .col-md-2 h2 {
+  font-size: 25px;
+  padding: 10px;
+  margin-bottom: 0;
+  border: 2px solid rgb(48, 78, 47);
+  border-radius: 30px 30px 0 0;
+  background-color: rgb(78, 128, 77);
+  color: white;
+}
+
+.item-picture,
+.user-picture {
+  width: 100%;
+  padding-top: 100%;
+  background-color: #ccc;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-picture {
+  background-size: contain;
+}
+
+.user-picture {
+  background-size: cover;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
+
+section.cadastrar_alimento {
+  padding: 90px 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-check {
+  text-align: left;
+}
+
+.form-banner h1 {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+}
+
+section.frutas.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fruta-container .col-md-2 {
+  padding: 20px;
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.user-picturechild {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.tabela-nutricional {
+  width: 100%;
+  margin-top: 50px;
+}
+
+div.nutricional {
+  width: 75%;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+div.nutricional h3 {
+  margin-top: 20px;
+  font-size: 20px;
+}
