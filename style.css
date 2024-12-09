@@ -24,8 +24,15 @@ header > h2 {
   background-size: cover;
   width: 100%;
   position: relative;
-}
+  padding: 20px;
 
+}
+.hidden {
+  display: none;
+}
+.section-frutas.hidden{
+  display: none !important;
+}
 .header {
   height: 100vh;
   background-image: url("img/freepik1.jpeg");
@@ -98,7 +105,6 @@ li {
   gap: 2rem;
 }
 
-
 div.logo a {
   font-family: "Poppins", sans-serif;
   font-size: 3rem;
@@ -127,8 +133,8 @@ div.logo a {
 
 section.intersection {
   background-color: rgb(78, 128, 77);
-  width:100%;
-  height:120px
+  width: 100%;
+  padding: 40px 20px;
 }
 
 div.symbol {
@@ -157,15 +163,15 @@ section.intersection h1 {
   font-size: 25px;
   color: white;
 }
-section.vantagens.contaiaaner.col-md-4{
+section.vantagens.contaiaaner.col-md-4 {
   max-height: 120px !important;
 }
 section.vantagens {
   margin-top: 40px;
   min-height: 100vh;
-  
+
   position: relative;
-  display:flex;
+  display: flex;
 }
 
 .contaiaaner {
@@ -231,7 +237,11 @@ section.vantagens {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgb(211, 211, 211, 1) 75%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(211, 211, 211, 1) 75%
+  );
   pointer-events: none;
 }
 
@@ -283,7 +293,7 @@ section.vantagens {
     display: block;
     color: white;
   }
-  .drop-menu {
+  .drop-menu.open {
     display: block !important;
   }
   .logo {
@@ -301,8 +311,48 @@ section.vantagens {
     width: unset;
   }
 }
+div.search {
+  margin: 0 auto;
+  top: 0 !important;
+  display: flex;
+  width: 100%;
 
+}
+div.input-search {
+  margin-top: 6px;
+  width: 30rem;
+  height: 5rem;
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  border: 3px solid black;
+  border-radius: 20px; /* Adiciona bordas arredondadas */
+  overflow: hidden; /* Garante que os elementos internos respeitem o border-radius */
+  background-color: white;
+}
 
+div.input-search input {
+  width: 80%; /* O input ocupa 80% da largura */
+  height: 90%;
+  padding: 0 10px;
+  height: 100%;
+  outline: none; /* Remove o contorno padrão */
+  border:none;
+}
+
+div.input-search i {
+  border:none;
+  width: 20%; /* Ícone ocupa 20% da largura */
+  text-align: center;
+  height: 100%;
+  font-size: 20px;
+
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 .action_btn:hover {
   color: white !important;
   transform: scale(1.05); /* Corrigido para usar transform */
@@ -376,11 +426,12 @@ section.frutas .col-md-2 h2 {
 .user-picture {
   width: 100%;
   padding-top: 100%;
+  height: 10px !important;
   background-color: #ccc;
   background-position: center;
   background-repeat: no-repeat;
 }
-
+div.form-check 
 .item-picture {
   background-size: contain;
 }
@@ -411,6 +462,7 @@ h2 {
   margin: 0;
   padding: 0;
   letter-spacing: 2px;
+  margin-left: 6rem;
 }
 
 section.frutas.row {
@@ -445,4 +497,36 @@ div.nutricional {
 div.nutricional h3 {
   margin-top: 20px;
   font-size: 20px;
+}
+
+div.card-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap:.25rem;
+}
+
+.item-cardz{
+  padding: 20px 10px;
+  gap:.25rem;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+}
+
+.card-picture{
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("img/abacate.png");
+}
+.card{
+  border:1px solid black;
+  padding: 15px;
+  box-sizing: border-box; /* importante para incluir padding nas dimensões */
+  word-break: break-word; /* quebra palavras longas */
+  overflow-wrap: break-word; /* garante quebra adicional */
+}
+
+.card p{
+  display: flex;
 }

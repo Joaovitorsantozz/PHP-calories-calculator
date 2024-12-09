@@ -42,6 +42,7 @@ function getValuesNutri($values, $grams)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+    <script src="search.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -158,16 +159,17 @@ function getValuesNutri($values, $grams)
             </div>
     </section>
     <section class="intersection">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1>Comece sua vida mais saudável agora mesmo !</h1>
-                </div>
+
+        <div class="search ">
+            <h1 class="text-left">Calculadora</h1>
+            <div class="input-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="search" name="food" data-search placeholder="Digite o nome da comida" onkeyup="searchFood()">
             </div>
         </div>
+
     </section>
     <form method="post" class="form-banner">
-        <h1>Calculadora</h1>
         <?php
         $sql = $pdo->prepare('SELECT DISTINCT `id_tipo` from `tb_nutri`');
         $sql->execute();
@@ -175,14 +177,9 @@ function getValuesNutri($values, $grams)
 
         $sql = $pdo->prepare('SELECT * FROM `tb_nutri` WHERE `id_tipo` = :tipo');
         foreach ($cate as $categoria) {
-
-
         ?>
-
             <section class="frutas">
-
                 <div class=" fruta-container">
-
                     <h2 class="text-left"><?php echo $categoria['id_tipo'] ?>s</h2>
                     <p> selecione as/os <?php echo $categoria['id_tipo'] ?>s utilizadas(os)</p>
                     <div class="row">
@@ -192,60 +189,14 @@ function getValuesNutri($values, $grams)
                         $types = $sql->fetchAll();
                         foreach ($types as $food) {
                         ?>
-                            <div class="col-md-2">
-                                <h2 class="text-center nome-comida"> <?php echo $food['Nome'];
-                                                                        ?></h2>
+                            <div class="col-md-2 food-item" data-name="<?php echo strtolower($food['Nome']); ?>">
+                                <h2 class="text-center nome-comida"> <?php echo $food['Nome']; ?></h2>
                                 <div class="item">
-
-                                    <div class="row row-custom">
-
-
+                                    <div class="row ">
                                         <div class="form-check ">
                                             <?php $alimento->getImagem($food['Nome']); ?>
-                                            <input class="form-check-input usadoform" type="checkbox" name="checkbox[]" value="<?php echo $food['Nome'] ?>" id="defaultCheck<?php echo $i; ?>">
-                                            <label class="form-check-label usadoform" value="" for="defaultCheck<?php echo $i; ?>">
-                                                Foi usado?
-                                            </label>
-                                            <input class="form-control mt-2" type="text" placeholder="Quantas gramas?" name="<?php echo $food['Nome'] ?>" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-2">
-                                <h2 class="text-center nome-comida"> <?php echo $food['Nome'];
-                                                                        ?></h2>
-                                <div class="item">
-
-                                    <div class="row">
-
-
-                                        <div class="form-check ">
-                                            <?php $alimento->getImagem($food['Nome']); ?>
-                                            <input class="form-check-input usadoform" type="checkbox" name="checkbox[]" value="<?php echo $food['Nome'] ?>" id="defaultCheck<?php echo $i; ?>">
-                                            <label class="form-check-label usadoform" value="" for="defaultCheck<?php echo $i; ?>">
-                                                Foi usado?
-                                            </label>
-                                            <input class="form-control mt-2" type="text" placeholder="Quantas gramas?" name="<?php echo $food['Nome'] ?>" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-2">
-                                <h2 class="text-center nome-comida"> <?php echo $food['Nome'];
-                                                                        ?></h2>
-                                <div class="item">
-
-                                    <div class="row">
-
-
-                                        <div class="form-check ">
-                                            <?php $alimento->getImagem($food['Nome']); ?>
-                                            <input class="form-check-input usadoform" type="checkbox" name="checkbox[]" value="<?php echo $food['Nome'] ?>" id="defaultCheck<?php echo $i; ?>">
-                                            <label class="form-check-label usadoform" value="" for="defaultCheck<?php echo $i; ?>">
+                                            <input class="form-check-input " type="checkbox" name="checkbox[]" value="<?php echo $food['Nome'] ?>" id="defaultCheck<?php echo $i; ?>">
+                                            <label class="form-check-label " value="" for="defaultCheck<?php echo $i; ?>">
                                                 Foi usado?
                                             </label>
                                             <input class="form-control mt-2" type="text" placeholder="Quantas gramas?" name="<?php echo $food['Nome'] ?>" />
@@ -256,22 +207,29 @@ function getValuesNutri($values, $grams)
                         <?php } ?>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
             </section>
         <?php  } ?>
         <div class="container">
-
             <input type="submit" value="Calcular valores nutricionais" name="enviar">
         </div>
     </form>
 
+    <div class="item-cardz">
+        <div class="card">
+            <div class="header-item">
+                <h1>Banana</h1>
+            </div>
+            <div class="body">
+                <div class="card-picture"></div>
+                <input class="form-check-input " type="checkbox" name="check">
+                <label class="form-check-label " value="">
+                    Foi usado?
+                </label>
+                <input class="form-control mt-2" type="text" placeholder="Quantas gramas?" />
+            </div>
+        </div>
+
+    </div>
     <section class="tabela-nutricional">
 
         <div class="container">
